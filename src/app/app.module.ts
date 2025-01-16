@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { InputAtomComponent } from './components/input-atom/input-atom.component';
 import { ButtonAtomComponent } from './components/button-atom/button-atom.component';
 import { LoadingComponent } from './shared/components/loading/loading.component';
+import { ModalComponent } from './shared/components/modal/modal.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoadingComponent
+    LoadingComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
