@@ -1,0 +1,7 @@
+<label *ngIf="label">{{ label }}</label>
+<input [attr.placeholder]="placeholder" [value]="value" (input)="onInput($event)" (blur)="handleBlur()"
+    [attr.minlength]="minLength || null" [attr.maxlength]="maxLength || null" [class.invalid]="showError"
+    class="input__" />
+<small class="input__error" >
+    {{ errorMessage }}
+</small>
