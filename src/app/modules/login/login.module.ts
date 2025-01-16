@@ -3,21 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
-import { InputAtomComponent } from 'src/app/components/input-atom/input-atom.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ButtonAtomComponent } from 'src/app/components/button-atom/button-atom.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
   declarations: [
-    LoginComponent,
-    InputAtomComponent,
-    ButtonAtomComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
     LoginRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ]
 })
 export class LoginModule { }

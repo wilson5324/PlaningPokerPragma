@@ -1,1 +1,12 @@
-<p>modal works!</p>
+<form class="modal">
+    <input-atom type="text" placeholder="Luisa" label="Tu nombre"></input-atom>
+    <div>
+        <label for="huey">Huey</label>
+        <input type="radio" id="huey" name="drone" value="huey" checked />
+    </div>
+    <div>
+        <label for="dewey">Dewey</label>
+        <input type="radio" id="dewey" name="drone" value="dewey" />
+    </div>
+    <button-atom textBtn="Crear partida" [isEnabled]="true" typeButton="button__secondary" type="submit"></button-atom>
+</form>
