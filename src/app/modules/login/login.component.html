@@ -1,1 +1,6 @@
-<p>login works!</p>
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="login__form">
+    <input-atom formControlName="lobbyName" type="email" placeholder="Sprint 131"
+        label="Nombre de la partida"></input-atom>
+    <button-atom class="login__button" textBtn="Crear partida" [isEnabled]="!formGroup.invalid"
+        typeButton="button__secondary" type="submit"> </button-atom>
+</form>
