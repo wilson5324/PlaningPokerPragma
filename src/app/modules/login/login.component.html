@@ -1,11 +1,10 @@
-
 <div class="login__title">
     <img src=".././../../assets/images/ficha-de-poker 1.svg" alt="" srcset="">
     <h1>Crear partida</h1>
 </div>
 <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="login__form">
-    <input-atom formControlName="lobbyName" type="text" placeholder="Sprint 131"
-        label="Nombre de la partida"></input-atom>
-    <button-atom class="login__button" textBtn="Crear partida" [isEnabled]="!formGroup.invalid"
-        typeButton="button__secondary" type="submit"> </button-atom>
+    <input-atom type="text" placeholder="Sprint 131" label="Nombre de la partida" formControlName="lobbyName" [minLength]="5" [maxLength]="20"></input-atom>
+
+    <button-atom class="login__button" textBtn="Crear partida" [isEnabled]="true" typeButton="button__secondary"
+        type="submit"> </button-atom>
 </form>
