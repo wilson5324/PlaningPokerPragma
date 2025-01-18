@@ -5,6 +5,7 @@ import { ButtonAtomComponent } from '../components/button-atom/button-atom.compo
 import { LoadingComponent } from './components/loading/loading.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RadioButtonAtomComponent } from '../components/radio-button-atom/radio-button-atom.component';
 
 
 
@@ -13,7 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     InputAtomComponent,
     ButtonAtomComponent,
     LoadingComponent,
-    ModalComponent
+    ModalComponent,
+    RadioButtonAtomComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     InputAtomComponent,
     ButtonAtomComponent,
     LoadingComponent,
-    ModalComponent
+    ModalComponent,
+    RadioButtonAtomComponent
   ]
 })
 export class SharedModule { }

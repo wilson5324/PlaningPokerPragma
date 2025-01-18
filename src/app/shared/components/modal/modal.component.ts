@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./modal.component.sass']
 })
 export class ModalComponent {
+  radioItems = [{label:"Jugador", value:"jugador"},{label:"Espectador", value:"espectador"}]
 
 }

@@ -11,8 +11,7 @@ import { RadioButtonAtomComponent } from './components/radio-button-atom/radio-b
 
 @NgModule({
   declarations: [
-    AppComponent,
-    RadioButtonAtomComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

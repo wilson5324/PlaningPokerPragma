@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { LobbyRoutingModule } from './lobby-routing.module';
 import { LobbyComponent } from './lobby.component';
-import { ModalComponent } from 'src/app/shared/components/modal/modal.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 
