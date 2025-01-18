@@ -1,15 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { parametersConstant } from 'src/app/shared/constants/parameters-constants';
+import { getErrorMessage } from 'src/app/shared/validators/getErrors';
+import { isMoreXNumbers } from 'src/app/shared/validators/not-more-x-numbers-validator';
+import { isOnlyNumbers } from 'src/app/shared/validators/not-only-numbers-validator';
+import { isAlphaNumeric } from 'src/app/shared/validators/special-chars-validator';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.sass']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
+  isLoading = false;
+  customError = "";
   formGroup: FormGroup; //Revisar form control
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router) {
     this.formGroup = this.fb.group({
       lobbyName: [
         '',
@@ -17,35 +25,32 @@ export class LoginComponent {
           Validators.required,
           Validators.minLength(5),
           Validators.maxLength(20),
-          this.customValidator()
+          isAlphaNumeric(),
+          isOnlyNumbers(),
+          isMoreXNumbers(3)
         ],
       ],
     });
   }
-
-  customValidator() {
-    return (control: AbstractControl) => {
-      const value = control.value || '';
-
-      if (/[_.*#\/-]/.test(value)) {
-        return { charError: 'No puede contener caracteres especiales como _,.*#/-' };
-      }
-
-      const numCount = (value.match(/\d/g) || []).length;
-      if (numCount > 3) {
-        return { lengthNumberError: 'No puede contener más de 3 números' };
-      }
-
-      if (/^\d+$/.test(value)) {
-        return { onlyNumberError: 'No puede ser solo números' };
-      }
-
-      return null;
-    };
-  }
-
+ngOnInit(): void {
+  this.formGroup.get('lobbyName')?.statusChanges.subscribe(() => {
+    console.log(getErrorMessage(this.formGroup.controls['lobbyName']));
+    console.log(this.formGroup.get('lobbyName')?.errors);
+    
+    if (this.formGroup.get('lobbyName')?.errors) {
+      this.customError = getErrorMessage(this.formGroup.controls['lobbyName'])
+      
+    }
+  });
+}
 
   onSubmit() {
-    console.log(this.formGroup);
+    console.log(this.formGroup.controls['lobbyName'].errors);
+    
+    this.isLoading = true
+    setTimeout(() => {
+      this.isLoading = false
+      this.router.navigate(['Lobby']);
+    }, 1000);
   }
 }

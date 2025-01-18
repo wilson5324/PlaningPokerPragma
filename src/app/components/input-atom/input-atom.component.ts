@@ -1,5 +1,6 @@
 import { Component, forwardRef, Input, signal } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors, Validator } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'input-atom',
@@ -44,6 +45,7 @@ export class InputAtomComponent implements ControlValueAccessor {
 
   setDisabledState(isDisabled: boolean): void {
     this.isDisable = isDisabled
+
   }
 
 }
