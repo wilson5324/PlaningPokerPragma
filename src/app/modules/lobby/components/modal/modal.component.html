@@ -1,0 +1,8 @@
+<form [formGroup]="formGroup" class="modal" (ngSubmit)="onSubmit()">
+    <input-atom type="text" placeholder="Luisa" label="Tu nombre" formControlName="playerName" [minLength]="5"
+        [maxLength]="20"></input-atom>
+    <span class="login__error">{{customError}}</span>
+    <radio-button-atom [radioItems]="radioItems" radioName="TipoJugados" class="modal__radio-buttons"
+        [isEnabled]="true" formControlName="typeView" ></radio-button-atom>
+    <button-atom textBtn="Crear partida" [isEnabled]="!formGroup.invalid" typeButton="button__secondary" type="submit"></button-atom>
+</form>
