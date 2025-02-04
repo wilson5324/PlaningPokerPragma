@@ -7,12 +7,14 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ModalComponent } from './components/modal/modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
   declarations: [
     LobbyComponent,
     ModalComponent,
+    HeaderComponent,
   ],
   imports: [
     CommonModule,
