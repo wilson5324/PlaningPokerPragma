@@ -3,4 +3,4 @@
 
 
 
-<app-modal *ngIf="false"></app-modal>
+<app-modal *ngIf="isModalOpen" (isComplete)="isModalComplete($event)"></app-modal>

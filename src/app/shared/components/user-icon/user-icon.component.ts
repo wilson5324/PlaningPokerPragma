@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { LobbyDataService } from '../../services/lobby-data.service';
 
 @Component({
   selector: 'app-user-icon',
@@ -7,12 +8,24 @@ import { Component, Input } from '@angular/core';
 })
 export class UserIconComponent {
 
-  @Input() name = "Unknown";
+  @Input() showLabel = false;
 
   shortName = "UK";
+  name="Unknown"
 
-  ngOnInit(): void {
-    this.shortName = this.name.substring(0, 2).toUpperCase();
+  constructor(private lobbyData: LobbyDataService){
+
   }
 
+  ngOnInit(): void {
+    this.lobbyData.getNamePlayer().subscribe((res)=>{
+      this.name = res
+      this.updateShotName();
+    })
+  }
+
+
+  updateShotName() {
+    this.shortName = this.name.substring(0, 2).toUpperCase();
+  }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LobbyDataService } from 'src/app/shared/services/lobby-data.service';
 import { getErrorMessage } from 'src/app/shared/validators/getErrors';
 import { isMoreXNumbers } from 'src/app/shared/validators/not-more-x-numbers-validator';
 import { isOnlyNumbers } from 'src/app/shared/validators/not-only-numbers-validator';
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
   customError = "";
   formGroup: FormGroup; //Revisar form control
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(private fb: FormBuilder, private router: Router, private lobbyData: LobbyDataService) {
     this.formGroup = this.fb.group({
       lobbyName: [
         '',
@@ -45,6 +46,7 @@ export class LoginComponent implements OnInit {
     this.isLoading = true
     setTimeout(() => {
       this.isLoading = false
+      this.lobbyData.setNameLobby(this.formGroup.get('lobbyName')?.value);
       this.router.navigate(['Lobby']);
     }, 1000);
   }

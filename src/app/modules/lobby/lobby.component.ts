@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LobbyDataService } from 'src/app/shared/services/lobby-data.service';
 
 @Component({
   selector: 'app-lobby',
@@ -6,9 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./lobby.component.sass']
 })
 export class LobbyComponent {
+  isModalOpen = true;
 
-  constructor() { 
-   
+
+  isModalComplete(event: boolean) {
+    this.isModalOpen=!event;
   }
-
 }
