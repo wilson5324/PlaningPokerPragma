@@ -8,6 +8,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ModalComponent } from './components/modal/modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
+import { TableComponent } from './components/table/table.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { HeaderComponent } from './components/header/header.component';
     LobbyComponent,
     ModalComponent,
     HeaderComponent,
+    TableComponent,
   ],
   imports: [
     CommonModule,

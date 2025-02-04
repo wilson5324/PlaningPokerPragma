@@ -6,6 +6,8 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RadioButtonAtomComponent } from '../components/radio-button-atom/radio-button-atom.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { CardComponent } from './components/card/card.component';
+import { UserIconComponent } from './components/user-icon/user-icon.component';
 
 
 
@@ -14,7 +16,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     InputAtomComponent,
     ButtonAtomComponent,
     LoadingComponent,
-    RadioButtonAtomComponent
+    RadioButtonAtomComponent,
+    CardComponent,
+    UserIconComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +29,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     InputAtomComponent,
     ButtonAtomComponent,
     LoadingComponent,
-    RadioButtonAtomComponent
+    RadioButtonAtomComponent,
+    CardComponent,
+    UserIconComponent
   ]
 })
 export class SharedModule { }
