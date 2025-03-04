@@ -2,7 +2,6 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LobbyDataService } from 'src/app/shared/services/lobby-data.service';
-import { getErrorMessage } from 'src/app/shared/validators/getErrors';
 import { isMoreXNumbers } from 'src/app/shared/validators/not-more-x-numbers-validator';
 import { isOnlyNumbers } from 'src/app/shared/validators/not-only-numbers-validator';
 import { isAlphaNumeric } from 'src/app/shared/validators/special-chars-validator';
@@ -18,7 +17,7 @@ export class ModalComponent {
 
   isLoading = false;
   customError = "";
-  formGroup: FormGroup; //Revisar form control
+  formGroup: FormGroup; 
 
   constructor(private fb: FormBuilder, private router: Router, private lobbyData: LobbyDataService) {
     this.formGroup = this.fb.group({

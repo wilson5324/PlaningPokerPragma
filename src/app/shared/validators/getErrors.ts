@@ -1,6 +1,6 @@
 import { AbstractControl } from "@angular/forms";
 
-//No usar camel case archivos
+
 export function getErrorMessage(control: AbstractControl): string {
     const errors = control.errors;
     if (!errors) return "";

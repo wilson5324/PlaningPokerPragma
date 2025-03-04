@@ -15,7 +15,7 @@ import { isAlphaNumeric } from 'src/app/shared/validators/special-chars-validato
 export class LoginComponent implements OnInit {
   isLoading = false;
   customError = "";
-  formGroup: FormGroup; //Revisar form control
+  formGroup: FormGroup; 
 
   constructor(private fb: FormBuilder, private router: Router, private lobbyData: LobbyDataService) {
     this.formGroup = this.fb.group({
@@ -34,12 +34,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.formGroup.get('lobbyName')?.statusChanges.subscribe(() => {
-      if (this.formGroup.get('lobbyName')?.errors) {
-        this.customError = getErrorMessage(this.formGroup.controls['lobbyName'])
 
-      }
-    });
   }
 
   onSubmit() {
