@@ -1,12 +1,12 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { LobbyDataService } from '../../services/lobby-data.service';
+import { LobbyDataService } from 'src/app/shared/services/lobby-data.service';
 
 @Component({
-  selector: 'app-user-icon',
-  templateUrl: './user-icon.component.html',
-  styleUrls: ['./user-icon.component.sass']
+  selector: 'user-icon-atom',
+  templateUrl: './user-icon-atom.component.html',
+  styleUrls: ['./user-icon-atom.component.sass']
 })
-export class UserIconComponent {
+export class UserIconAtomComponent {
 
   @Input() showLabel = false;
 

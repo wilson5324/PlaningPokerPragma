@@ -8,7 +8,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

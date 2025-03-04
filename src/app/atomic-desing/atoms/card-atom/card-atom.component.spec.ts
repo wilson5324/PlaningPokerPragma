@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TableComponent } from './table.component';
+import { CardAtomComponent } from './card-atom.component';
 
-describe('TableComponent', () => {
-  let component: TableComponent;
-  let fixture: ComponentFixture<TableComponent>;
+describe('CardAtomComponent', () => {
+  let component: CardAtomComponent;
+  let fixture: ComponentFixture<CardAtomComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TableComponent]
+      declarations: [CardAtomComponent]
     });
-    fixture = TestBed.createComponent(TableComponent);
+    fixture = TestBed.createComponent(CardAtomComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
