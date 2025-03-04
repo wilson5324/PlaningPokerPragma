@@ -1,21 +1,27 @@
 import { AbstractControl } from "@angular/forms";
 
+//No usar camel case archivos
 export function getErrorMessage(control: AbstractControl): string {
-    if (control.hasError('minlength')) {
-        return 'El mínimo de digitos son ' + control.errors?.["minlength"].requiredLength;
-    } else if (control.hasError('maxlength')) {
-        return 'El maximo de digitos son ' + control.errors?.["maxlength"].requiredLength;
+    const errors = control.errors;
+    if (!errors) return "";
+
+    const errorKey = Object.keys(errors)[0];
+
+    switch (errorKey) {
+        case 'minlength':
+            return 'El mínimo de dígitos son ' + errors["minlength"].requiredLength;
+        case 'maxlength':
+            return 'El máximo de dígitos son ' + errors["maxlength"].requiredLength;
+        case 'maxNumbers':
+            return 'No pueden ser más de ' + errors["maxNumbers"].maxNumbers + ' números';
+        case 'alphaNumeric':
+            return 'No puede contener caracteres especiales';
+        case 'onlyNumbers':
+            return 'No pueden ser solo números';
+        default:
+            return "";
     }
-    else if (control.hasError('maxNumbers')) {
-        return 'No pueden ser mas de ' + control.errors?.["maxNumbers"].maxNumbers + " numeros";
-    }
-    else if (control.hasError('alphaNumeric')) {
-        return 'No puede contener caracteres especiales';
-    }
-    else if (control.hasError('onlyNumbers')) {
-        return 'No pueden ser solo numeros';
-    }
-    return "";
 }
+
 
 

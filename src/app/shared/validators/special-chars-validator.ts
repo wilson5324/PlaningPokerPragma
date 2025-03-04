@@ -1,11 +1,11 @@
 import { AbstractControl, ValidatorFn } from "@angular/forms";
-import { parametersConstant } from "../constants/parameters-constants";
+import { parametersRegularExpressions } from "../constants/parameters-regular-expressions";
 
 export function isAlphaNumeric(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: boolean } | null => {
         const value = control.value || '';
 
-        if (parametersConstant.alphaNumeric.test(value)) {
+        if (parametersRegularExpressions.alphaNumeric.test(value)) {
             return { alphaNumeric: true };
         }
         return null;

@@ -5,7 +5,21 @@
 <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="login__form" *ngIf="!isLoading">
     <input-atom type="text" placeholder="Sprint 131" label="Nombre de la partida" formControlName="lobbyName"
         [minLength]="5" [maxLength]="20"></input-atom>
-    <span class="login__error">{{customError}}</span>
+
+    <span class="login__error" *ngIf="this.formGroup.get('lobbyName')?.errors?.['minlength']">El mínimo de dígitos son
+        {{this.formGroup.get('lobbyName')?.errors?.['minlength'].requiredLength}} </span>
+
+    <span class="login__error" *ngIf="this.formGroup.get('lobbyName')?.errors?.['maxlength']">El máximo de dígitos son
+        {{this.formGroup.get('lobbyName')?.errors?.['maxlength'].requiredLength}} </span>
+
+    <span class="login__error" *ngIf="this.formGroup.get('lobbyName')?.errors?.['maxNumbers']">No pueden ser más de
+        {{this.formGroup.get('lobbyName')?.errors?.['maxNumbers'].maxNumbers}} números</span>
+
+    <span class="login__error" *ngIf="this.formGroup.get('lobbyName')?.errors?.['alphaNumeric']">No puede contener
+        caracteres especiales</span>
+
+    <span class="login__error" *ngIf="this.formGroup.get('lobbyName')?.errors?.['onlyNumbers']">No pueden ser solo
+        números</span>
 
     <button-atom class="login__button" textBtn="Crear partida" [isEnabled]="!formGroup.invalid"
         typeButton="button__secondary" type="submit"> </button-atom>

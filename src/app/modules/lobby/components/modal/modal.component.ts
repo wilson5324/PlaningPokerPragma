@@ -45,15 +45,6 @@ export class ModalComponent {
   }
 
   ngOnInit(): void {
-
-    this.formGroup.get('playerName')?.statusChanges.subscribe(() => {
-      console.log(this.formGroup);
-
-      if (this.formGroup.get('playerName')?.errors) {
-        this.customError = getErrorMessage(this.formGroup.controls['playerName'])
-
-      }
-    });
   }
 
   onSubmit() {

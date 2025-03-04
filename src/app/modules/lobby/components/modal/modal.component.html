@@ -1,7 +1,23 @@
 <form [formGroup]="formGroup" class="modal" (ngSubmit)="onSubmit()">
+
     <input-atom type="text" placeholder="Luisa" label="Tu nombre" formControlName="playerName" [minLength]="5"
         [maxLength]="20"></input-atom>
-    <span class="modal__error">{{customError}}</span>
+
+    <span class="login__error" *ngIf="this.formGroup.get('playerName')?.errors?.['minlength']">El mínimo de dígitos son
+        {{this.formGroup.get('playerName')?.errors?.['minlength'].requiredLength}} </span>
+
+    <span class="login__error" *ngIf="this.formGroup.get('playerName')?.errors?.['maxlength']">El máximo de dígitos son
+        {{this.formGroup.get('playerName')?.errors?.['maxlength'].requiredLength}} </span>
+
+    <span class="login__error" *ngIf="this.formGroup.get('playerName')?.errors?.['maxNumbers']">No pueden ser más de
+        {{this.formGroup.get('playerName')?.errors?.['maxNumbers'].maxNumbers}} números</span>
+
+    <span class="login__error" *ngIf="this.formGroup.get('playerName')?.errors?.['alphaNumeric']">No puede contener
+        caracteres especiales</span>
+
+    <span class="login__error" *ngIf="this.formGroup.get('playerName')?.errors?.['onlyNumbers']">No pueden ser solo
+        números</span>
+
     <radio-button-atom [radioItems]="radioItems" radioName="TipoJugados" class="modal__radio-buttons"
         [isEnabled]="true" formControlName="typeView" ></radio-button-atom>
     <button-atom textBtn="Crear partida" [isEnabled]="!formGroup.invalid" typeButton="button__secondary" type="submit"></button-atom>

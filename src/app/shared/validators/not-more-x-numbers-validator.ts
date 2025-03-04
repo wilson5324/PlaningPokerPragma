@@ -1,5 +1,4 @@
 import { AbstractControl, ValidatorFn } from "@angular/forms";
-import { parametersConstant } from "../constants/parameters-constants";
 
 export function isMoreXNumbers(maxNumbers: number): ValidatorFn {
     return (control: AbstractControl) => {
