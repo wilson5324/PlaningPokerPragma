@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card-atom',
@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./card-atom.component.sass']
 })
 export class CardAtomComponent {
+  @Input() typeCard!: string;
+  @Input() name!: string;
+  @Input() value!: number;
 
 }

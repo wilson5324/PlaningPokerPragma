@@ -11,6 +11,7 @@ import { CardAtomComponent } from '../atomic-desing/atoms/card-atom/card-atom.co
 import { TableAtomComponent } from '../atomic-desing/atoms/table-atom/table-atom.component';
 import { ModalComponent } from '../modules/lobby/components/modal/modal.component';
 import { ModalMoleculeComponent } from '../atomic-desing/molecules/modal-molecule/modal-molecule.component';
+import { PlanningTableMoleculeComponent } from '../atomic-desing/molecules/planning-table-molecule/planning-table-molecule.component';
 
 
 
@@ -23,7 +24,8 @@ import { ModalMoleculeComponent } from '../atomic-desing/molecules/modal-molecul
     UserIconAtomComponent,
     CardAtomComponent,
     TableAtomComponent,
-    ModalMoleculeComponent
+    ModalMoleculeComponent,
+    PlanningTableMoleculeComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +40,8 @@ import { ModalMoleculeComponent } from '../atomic-desing/molecules/modal-molecul
     UserIconAtomComponent,
     CardAtomComponent,
     TableAtomComponent,
-    ModalMoleculeComponent
+    ModalMoleculeComponent,
+    PlanningTableMoleculeComponent
   ]
 })
 export class SharedModule { }

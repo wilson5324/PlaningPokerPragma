@@ -1,0 +1,45 @@
+:host
+    width: 10em
+    height: 20vh
+    border-radius: 12px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    gap: 1em
+    padding: 1em
+    color: white
+    font-family: Arial, sans-serif
+
+.card
+    width: 40%
+    height: 50%
+    border-radius: 12px
+    font-size: 16px
+    font-size: 1.2em
+    font-weight: bold
+    display: flex
+    justify-content: center
+    align-items: center
+
+    &__disabled
+        border: 2px solid #a86dfc
+        color: white
+    &__selected
+        background: #E4A4FF
+        border: 2px solid #E4A4FF
+        color: #330072
+        box-shadow: 0px 0px 20px 0px #BDBDFF33 inset, 0px 0px 15px 0px #6429CD
+    &__selectable
+        border: 2px solid #a86dfc
+        color: white
+        &:hover
+            cursor: pointer
+            background: #E4A4FF
+            border: 2px solid #E4A4FF
+            color: #330072
+            box-shadow: 0px 0px 20px 0px #BDBDFF33 inset, 0px 0px 15px 0px #6429CD
+
+.name
+    font-size: 1.2em
+    font-weight: bold
