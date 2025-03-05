@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./planning-table-molecule.component.sass']
 })
 export class PlanningTableMoleculeComponent {
+  constructor() { }
 
 }

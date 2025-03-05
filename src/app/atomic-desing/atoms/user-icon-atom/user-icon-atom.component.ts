@@ -10,8 +10,8 @@ export class UserIconAtomComponent {
 
   @Input() showLabel = false;
 
-  shortName = "UK";
-  name="Unknown"
+  shortName = "WI";
+  name="Wilson"
 
   constructor(private lobbyData: LobbyDataService){
 
