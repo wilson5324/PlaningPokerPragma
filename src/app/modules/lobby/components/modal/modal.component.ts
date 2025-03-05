@@ -13,11 +13,14 @@ import { isAlphaNumeric } from 'src/app/shared/validators/special-chars-validato
 })
 export class ModalComponent {
   @Output() isComplete = new EventEmitter<boolean>();
-  radioItems = [{ label: "Jugador", value: "jugador" }, { label: "Espectador", value: "espectador" }];
+  radioItems = [
+    { label: "Jugador", value: "jugador" },
+    { label: "Espectador", value: "espectador" }
+  ];
 
   isLoading = false;
   customError = "";
-  formGroup: FormGroup; 
+  formGroup: FormGroup;
 
   constructor(private fb: FormBuilder, private router: Router, private lobbyData: LobbyDataService) {
     this.formGroup = this.fb.group({
@@ -31,20 +34,15 @@ export class ModalComponent {
           isOnlyNumbers(),
           isMoreXNumbers(3)
         ],
-
       ],
       typeView: [
-        '',
-        [
-          Validators.required
-        ],
-
+        this.radioItems[0].value, //Se inicializa con el primer valor
+        [Validators.required],
       ],
     });
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   onSubmit() {
     this.lobbyData.setNamePlayer(this.formGroup.get('playerName')?.value);

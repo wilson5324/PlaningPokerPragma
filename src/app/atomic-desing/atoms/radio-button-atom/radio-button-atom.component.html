@@ -1,5 +1,5 @@
-<div *ngFor="let item of radioItems" class="radio__item"> 
-        <label for="{{item.value}}">{{item.label}}</label>
-        <input type="radio" name="{{radioName}}" id="{{item.value}}" value="{{item.value}}" 
-            class="radio__input" (change)="changeText($event)" [disabled]="!isEnabled">
+<div *ngFor="let item of radioItems; let i = index" class="radio__item">
+    <label for="{{ item.value }}">{{ item.label }}</label>
+    <input type="radio" name="{{ radioName }}" id="{{ item.value }}" value="{{ item.value }}" class="radio__input"
+        (change)="changeText($event)" [disabled]="!isEnabled" [checked]="currentValue === item.value">
 </div>

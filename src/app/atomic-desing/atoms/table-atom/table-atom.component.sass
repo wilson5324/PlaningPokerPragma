@@ -1,9 +1,30 @@
 :host
-    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100vh
 
-.table
-    &__img
+    .mesa
+        width: 600px
+        height: 300px
+        border-radius: 150px
+        position: relative
+        box-shadow: 0 0 10px #6b32a8, 0 0 20px #6b32a8, 0 0 40px #6b32a8
+
+    .mesa::before,
+    .mesa::after
+        content: ""
         position: absolute
-        top: 50%
-        left: 50%
-        transform: translate(-50%, -50%)
+        width: 620px
+        height: 320px
+        border-radius: 160px
+        border: 2px solid #6b32a8
+        top: -10px
+        left: -10px
+
+    .mesa::after
+        width: 640px
+        height: 340px
+        border-radius: 170px
+        top: -20px
+        left: -20px

@@ -15,25 +15,34 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class RadioButtonAtomComponent implements ControlValueAccessor {
   @Input() radioItems!: { label: string, value: string }[];
   @Input() radioName!: string;
-  @Input() columns!: string;
-  @Input() isEnabled!: boolean;
+  @Input() isEnabled: boolean = true;
 
-  constructor() {
-  }
-
-
-  isDisable!: boolean;
-  currentValue = "";
-
-  private onChange = (_: any) => { };
+  currentValue: string = "";
+  private onChange = (value: any) => { };
   private onTouch = () => { };
 
+  constructor() { }
+
+  ngOnInit() {
+    if (this.radioItems?.length) {
+      this.currentValue = this.radioItems[0].value;
+      this.onChange(this.currentValue); // 🔹 Notifica al formulario el valor inicial
+    }
+  }
+
   changeText($event: any): void {
-    this.onChange($event.target.value)
+    this.currentValue = $event.target.value;
+    this.onChange(this.currentValue);
+    this.onTouch();
   }
 
   writeValue(value: string): void {
-    this.currentValue = value;
+    if (value) {
+      this.currentValue = value;
+    } else if (this.radioItems?.length) {
+      this.currentValue = this.radioItems[0].value; //Usa la primera opción si no hay valor
+    }
+    this.onChange(this.currentValue); //Notifica al formulario
   }
 
   registerOnChange(fn: any): void {
@@ -42,11 +51,6 @@ export class RadioButtonAtomComponent implements ControlValueAccessor {
 
   registerOnTouched(fn: any): void {
     this.onTouch = fn;
-  }
-
-  setDisabledState(isDisabled: boolean): void {
-    this.isDisable = isDisabled
-
   }
 }
 

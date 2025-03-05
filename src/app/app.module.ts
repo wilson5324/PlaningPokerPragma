@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -12,8 +11,7 @@ import { MatDialogModule } from '@angular/material/dialog';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    MatDialogModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
