@@ -46,7 +46,7 @@ export class ModalComponent {
 
   onSubmit() {
     this.lobbyData.setNamePlayer(this.formGroup.get('playerName')?.value);
-    this.lobbyData.setIsSpectator(this.formGroup.get('typeView')?.value != "jugador");
+    this.lobbyData.setIsPlayer(this.formGroup.get('typeView')?.value == "jugador");
     this.isComplete.emit(true);
   }
 

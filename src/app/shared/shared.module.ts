@@ -9,9 +9,6 @@ import { ButtonAtomComponent } from '../atomic-desing/atoms/button-atom/button-a
 import { UserIconAtomComponent } from '../atomic-desing/atoms/user-icon-atom/user-icon-atom.component';
 import { CardAtomComponent } from '../atomic-desing/atoms/card-atom/card-atom.component';
 import { TableAtomComponent } from '../atomic-desing/atoms/table-atom/table-atom.component';
-import { ModalComponent } from '../modules/lobby/components/modal/modal.component';
-import { ModalMoleculeComponent } from '../atomic-desing/molecules/modal-molecule/modal-molecule.component';
-import { PlanningTableMoleculeComponent } from '../atomic-desing/molecules/planning-table-molecule/planning-table-molecule.component';
 
 
 
@@ -24,8 +21,6 @@ import { PlanningTableMoleculeComponent } from '../atomic-desing/molecules/plann
     UserIconAtomComponent,
     CardAtomComponent,
     TableAtomComponent,
-    ModalMoleculeComponent,
-    PlanningTableMoleculeComponent
   ],
   imports: [
     CommonModule,
@@ -40,8 +35,6 @@ import { PlanningTableMoleculeComponent } from '../atomic-desing/molecules/plann
     UserIconAtomComponent,
     CardAtomComponent,
     TableAtomComponent,
-    ModalMoleculeComponent,
-    PlanningTableMoleculeComponent
   ]
 })
 export class SharedModule { }

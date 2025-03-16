@@ -18,10 +18,7 @@ export class UserIconAtomComponent {
   }
 
   ngOnInit(): void {
-    this.lobbyData.getNamePlayer().subscribe((res)=>{
-      this.name = res
-      this.updateShotName();
-    })
+    this.lobbyData.getNamePlayer();
   }
 
 

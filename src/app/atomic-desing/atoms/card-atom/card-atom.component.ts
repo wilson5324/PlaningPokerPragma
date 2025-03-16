@@ -6,8 +6,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card-atom.component.sass']
 })
 export class CardAtomComponent {
-  @Input() typeCard!: string;
+  @Input() typeCard= "card--selected";
   @Input() name!: string;
-  @Input() value!: number;
+  @Input() value!: string;
 
 }

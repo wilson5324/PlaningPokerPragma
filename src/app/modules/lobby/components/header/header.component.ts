@@ -16,9 +16,6 @@ export class HeaderComponent {
 
   ngOnInit() {
     this.nameLobby = this.lobbyData.getNameLobby();
-    this.lobbyData.getNamePlayer().subscribe((res)=>{
-      this.namePlayer = res
-      
-    });
+    this.lobbyData.getNamePlayer()
   }
 }

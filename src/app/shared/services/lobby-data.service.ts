@@ -6,9 +6,9 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class LobbyDataService {
   private nameLobby = "";
-  private namePlayer = new BehaviorSubject<string>('Unknown');
+  private namePlayer = "";
   private isAdmin = false;
-  private isSpectator = false;
+  private isPlayer = false;
 
   constructor() { }
 
@@ -17,30 +17,30 @@ export class LobbyDataService {
   }
 
   setNamePlayer(name: string): void {
-    this.namePlayer.next(name);
+    this.namePlayer = name;
   }
 
   setIsAdmin(isAdmin: boolean): void {
     this.isAdmin = isAdmin;
   }
 
-  setIsSpectator(isSpectator: boolean): void {
-    this.isSpectator = isSpectator;
+  setIsPlayer(isPlayer: boolean): void {
+    this.isPlayer = isPlayer;
   }
 
   getNameLobby(): string {
     return this.nameLobby;
   }
 
-  getNamePlayer(): Observable<string> {
-    return this.namePlayer.asObservable();
+  getNamePlayer(): string {
+    return this.namePlayer;
   }
 
 
   getIsAdmin(): boolean {
     return this.isAdmin;
   }
-  getIsSpectator(): boolean {
-    return this.isSpectator;
+  getIsPlayer(): boolean {
+    return this.isPlayer;
   }
 }
