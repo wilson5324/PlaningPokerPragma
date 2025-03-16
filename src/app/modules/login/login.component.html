@@ -21,7 +21,7 @@
     <span class="login__error" *ngIf="this.formGroup.get('lobbyName')?.errors?.['onlyNumbers']">No pueden ser solo
         números</span>
 
-    <button-atom class="login__button" textBtn="Crear partida" [isEnabled]="!formGroup.invalid"
-        typeButton="button__secondary" type="submit"> </button-atom>
+    <button-atom class="login__button" textBtn="Crear partida" [isDisabled]="formGroup.invalid"
+        typeButton="button--secondary" type="submit"> </button-atom>
 </form>
 <app-loading *ngIf="isLoading"></app-loading>

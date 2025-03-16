@@ -45,7 +45,6 @@ export class InputAtomComponent implements ControlValueAccessor {
 
   setDisabledState(isDisabled: boolean): void {
     this.isDisable = isDisabled
-
   }
 
 }

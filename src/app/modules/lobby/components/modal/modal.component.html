@@ -1,4 +1,4 @@
-<form [formGroup]="formGroup" class="modal" (ngSubmit)="onSubmit()">
+<form [formGroup]="formGroup" class="modal" >
     <input-atom type="text" placeholder="Luisa" label="Tu nombre" formControlName="playerName" [minLength]="5"
         [maxLength]="20">
     </input-atom>
@@ -27,6 +27,6 @@
         formControlName="typeView">
     </radio-button-atom>
 
-    <button-atom textBtn="Crear partida" [isEnabled]="!formGroup.invalid" typeButton="button__secondary" type="submit">
+    <button-atom textBtn="Crear partida" [isDisabled]="formGroup.invalid" typeButton="button--secondary" (click)="onSubmit()">
     </button-atom>
 </form>

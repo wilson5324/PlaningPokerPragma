@@ -6,9 +6,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./button-atom.component.sass']
 })
 export class ButtonAtomComponent {
-  @Input() textBtn!: string;;
-  @Input() typeButton!: string;
-  @Input() type!: string;
-  @Input() isEnabled!: boolean;
-
+  @Input({ required: true }) textBtn!: string;
+  @Input() typeButton = "button--primary";
+  @Input() type = "button";
+  @Input() isDisabled = false;
 }

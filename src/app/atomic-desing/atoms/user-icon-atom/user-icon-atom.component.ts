@@ -8,7 +8,7 @@ import { LobbyDataService } from 'src/app/shared/services/lobby-data.service';
 })
 export class UserIconAtomComponent {
 
-  @Input() showLabel = false;
+  @Input({ required: true }) showLabel = false;
 
   shortName = "WI";
   name="Wilson"
